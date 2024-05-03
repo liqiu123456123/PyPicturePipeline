@@ -2,7 +2,7 @@ import os
 import os.path
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtWidgets import QMainWindow,QFileDialog,QMessageBox
-import imageMark # 导入模块
+import ImgMark # 导入模块
 
 class Ui_RenameWindow(QMainWindow):
 

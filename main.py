@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPu
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtGui import QFont
-import imageRename, imageMark
+import ImgRename, ImgMark
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -79,8 +79,8 @@ class MainWindow(QWidget):
         win2 = QStackedWidget()
         win2.setStyleSheet("background-color: #ffffff;")
         # 创建两个界面，这里用QLabel代替其他复杂界面
-        self.ctx_ui = imageRename.Ui_RenameWindow()
-        self.login_res = imageMark.Ui_MarkWindow()
+        self.ctx_ui = ImgRename.Ui_RenameWindow()
+        self.login_res = ImgMark.Ui_MarkWindow()
 
         # 将界面添加到堆叠控件
         win2.addWidget(self.ctx_ui)
