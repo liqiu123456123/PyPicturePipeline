@@ -29,60 +29,60 @@ class Ui_MarkWindow(QMainWindow):
         self.pushButton.setObjectName("pushButton")
 
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox.setGeometry(QtCore.QRect(150, 30, 421, 151))
+        self.groupBox.setGeometry(QtCore.QRect(150, 30, 670, 151))
         self.groupBox.setObjectName("groupBox")
 
         # 设置文字水印单选按钮
         self.radioButton = QtWidgets.QRadioButton(self.groupBox)
-        self.radioButton.setGeometry(QtCore.QRect(20, 20, 101, 16))
+        self.radioButton.setGeometry(QtCore.QRect(20, 20, 121, 16))
         self.radioButton.setChecked(True)# 默认选中
         self.radioButton.setObjectName("radioButton")
 
         self.label = QtWidgets.QLabel(self.groupBox)
-        self.label.setGeometry(QtCore.QRect(30, 50, 54, 16))
+        self.label.setGeometry(QtCore.QRect(30, 50, 74, 16))
         self.label.setObjectName("label")
 
         # 设置要输入水印文字的文本框
         self.lineEdit = QtWidgets.QLineEdit(self.groupBox)
-        self.lineEdit.setGeometry(QtCore.QRect(90, 50, 241, 20))
+        self.lineEdit.setGeometry(QtCore.QRect(110, 50, 241, 20))
         self.lineEdit.setObjectName("lineEdit")
 
         # 设置“字体设置”按钮
         self.pushButton_2 = QtWidgets.QPushButton(self.groupBox)
-        self.pushButton_2.setGeometry(QtCore.QRect(340, 50, 75, 23))
+        self.pushButton_2.setGeometry(QtCore.QRect(360, 50, 75, 23))
         self.pushButton_2.setObjectName("pushButton_2")
 
         # 设置图片水印单选按钮
         self.radioButton_2 = QtWidgets.QRadioButton(self.groupBox)
-        self.radioButton_2.setGeometry(QtCore.QRect(20, 80, 91, 16))
+        self.radioButton_2.setGeometry(QtCore.QRect(20, 80, 111, 16))
         self.radioButton_2.setChecked(False)# 默认不选中
         self.radioButton_2.setObjectName("radioButton_2")
 
         # 设置选择水印图片按钮
         self.pushButton_3 = QtWidgets.QPushButton(self.groupBox)
-        self.pushButton_3.setGeometry(QtCore.QRect(340, 110, 75, 23))
+        self.pushButton_3.setGeometry(QtCore.QRect(360, 110, 95, 23))
         self.pushButton_3.setObjectName("pushButton_3")
 
         self.label_2 = QtWidgets.QLabel(self.groupBox)
-        self.label_2.setGeometry(QtCore.QRect(30, 110, 54, 16))
+        self.label_2.setGeometry(QtCore.QRect(30, 110, 74, 16))
         self.label_2.setObjectName("label_2")
 
         # 设置显示水印图片路径的文本框
         self.lineEdit_2 = QtWidgets.QLineEdit(self.groupBox)
-        self.lineEdit_2.setGeometry(QtCore.QRect(90, 110, 241, 20))
+        self.lineEdit_2.setGeometry(QtCore.QRect(110, 110, 241, 20))
         self.lineEdit_2.setObjectName("lineEdit_2")
 
         self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_2.setGeometry(QtCore.QRect(150, 190, 421, 71))
+        self.groupBox_2.setGeometry(QtCore.QRect(150, 190, 670, 71))
         self.groupBox_2.setObjectName("groupBox_2")
 
         self.label_3 = QtWidgets.QLabel(self.groupBox_2)
-        self.label_3.setGeometry(QtCore.QRect(270, 31, 54, 21))
+        self.label_3.setGeometry(QtCore.QRect(270, 31, 64, 21))
         self.label_3.setObjectName("label_3")
 
         # 设置水印位置选择框
         self.comboBox = QtWidgets.QComboBox(self.groupBox_2)
-        self.comboBox.setGeometry(QtCore.QRect(330, 30, 71, 22))
+        self.comboBox.setGeometry(QtCore.QRect(340, 30, 71, 22))
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem('左上角')
         self.comboBox.addItem('右上角')
@@ -97,14 +97,14 @@ class Ui_MarkWindow(QMainWindow):
 
         # 设置水印透明度的滑动条
         self.horizontalSlider = QtWidgets.QSlider(self.groupBox_2)
-        self.horizontalSlider.setGeometry(QtCore.QRect(70, 30, 181, 22))
+        self.horizontalSlider.setGeometry(QtCore.QRect(80, 30, 181, 22))
         self.horizontalSlider.setMinimum(1)
         self.horizontalSlider.setMaximum(10)
         self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
         self.horizontalSlider.setObjectName("horizontalSlider")
 
         self.groupBox_3 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_3.setGeometry(QtCore.QRect(150, 270, 421, 71))
+        self.groupBox_3.setGeometry(QtCore.QRect(150, 270, 670, 71))
         self.groupBox_3.setObjectName("groupBox_3")
 
         self.label_6 = QtWidgets.QLabel(self.groupBox_3)
@@ -113,12 +113,12 @@ class Ui_MarkWindow(QMainWindow):
 
         # 设置显示保存路径的文本框
         self.lineEdit_3 = QtWidgets.QLineEdit(self.groupBox_3)
-        self.lineEdit_3.setGeometry(QtCore.QRect(80, 30, 241, 20))
+        self.lineEdit_3.setGeometry(QtCore.QRect(90, 30, 241, 20))
         self.lineEdit_3.setObjectName("lineEdit_3")
 
         # 设置选择图片保存路径的按钮
         self.pushButton_4 = QtWidgets.QPushButton(self.groupBox_3)
-        self.pushButton_4.setGeometry(QtCore.QRect(330, 30, 75, 23))
+        self.pushButton_4.setGeometry(QtCore.QRect(370, 30, 75, 23))
         self.pushButton_4.setObjectName("pushButton_4")
 
         #设置执行按钮
