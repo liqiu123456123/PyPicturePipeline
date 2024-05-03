@@ -1,92 +1,110 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox
-from PyQt5.QtGui import QBrush, QPixmap
-import imageRename, imageMark  # 导入模块
+# PyPicturePipeline
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QStackedWidget, QLabel, \
+    QSpacerItem, QSizePolicy
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QFont
+import imageRename, imageMark
+class MainWindow(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        # 创建主垂直布局
+        main_layout = QVBoxLayout(self)
+        main_layout.setContentsMargins(0, 0, 0, 0)  # 设置布局的四个间距都为0
+        self.resize(1000, 860)
+        # 创建第一个QWidget，背景色为绿色，固定高度为60
+        top_widget = QWidget()
+        top_widget.setStyleSheet("background-color:#f7d78c;")
+        top_widget.setFixedHeight(60)
+        # 创建一个横向布局
+        h_layout = QHBoxLayout()
+
+        # 创建图片标签并添加到横向布局
+        image_label = QLabel()
+        # 假设你有一个图片路径
+        # 加载图片并调整其大小为64x64
+        pixmap = QPixmap('img.png')
+        scaled_pixmap = pixmap.scaled(64, 64, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        image_label.setPixmap(scaled_pixmap)
+        h_layout.addWidget(image_label)
+        h_layout.setSpacing(40)
+        # 创建文本标签并添加到横向布局
+        text_label = QLabel("欢迎使用PyPicturePipeline！")
+        text_label.setStyleSheet("QLabel { color: white; }")
+        h_layout.addWidget(text_label)
+
+        # 创建一个压缩空间控件并添加到横向布局
+        # 使用QSizePolicy.Expanding作为策略可以使空间尽可能地被压缩
+        spacer_item = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        h_layout.addItem(spacer_item)
+
+        # 将横向布局设置为top_widget的布局
+        top_widget.setLayout(h_layout)
+        # 添加到主布局
+        main_layout.addWidget(top_widget)
+
+        # 创建第二个QWidget，用于包含win1和win2的QHBoxLayout
+        second_widget = QWidget()
+        second_layout = QHBoxLayout(second_widget)
+
+        # 创建win1，固定宽度为60
+        win1 = QWidget()
+        win1.setFixedWidth(150)
+        win1.setStyleSheet("background-color: #f7d78c;")
+        # 创建两个按钮
+        button1 = QPushButton("批量重命名", win1)
+        button2 = QPushButton("批量添加水印", win1)
+        # 设置字体样式
+        font = QFont('微软雅黑', 12, QFont.Bold)  # 字体名称、大小、加粗
+        button1.setFont(font)
+        button2.setFont(font)
+        text_label.setFont(font)
+        button1.setStyleSheet("QPushButton { color: white; }")
+        button2.setStyleSheet("QPushButton { color: white; }")
+        spacer_item2 = QSpacerItem(40, 20, QSizePolicy.Minimum,QSizePolicy.Expanding)
+        # 垂直布局用于放置按钮
+        button_layout = QVBoxLayout(win1)
+        button_layout.addWidget(button1)
+        button_layout.addWidget(button2)
+        button_layout.addItem(spacer_item2)
+        button_layout.setSpacing(40)
+        # 将win1添加到水平布局
+        second_layout.addWidget(win1)
+
+        # 创建win2的QStackedWidget
+        win2 = QStackedWidget()
+        win2.setStyleSheet("background-color: #ffffff;")
+        # 创建两个界面，这里用QLabel代替其他复杂界面
+        self.ctx_ui = imageRename.Ui_RenameWindow()
+        self.login_res = imageMark.Ui_MarkWindow()
+
+        # 将界面添加到堆叠控件
+        win2.addWidget(self.ctx_ui)
+        win2.addWidget(self.login_res)
+
+        # 将win2添加到水平布局
+        second_layout.addWidget(win2)
+
+        # 将第二个QWidget添加到主布局
+        main_layout.addWidget(second_widget)
+
+        # 连接按钮信号到槽函数
+        button1.clicked.connect(lambda: win2.setCurrentIndex(0))
+        button2.clicked.connect(lambda: win2.setCurrentIndex(1))
+        main_layout.setSpacing(0)
+        second_layout.setSpacing(0)
+        second_layout.setContentsMargins(0, 0, 0, 0)
+        button_layout.setContentsMargins(10, 30, 10, 0)
+        # 设置窗口属性
+        self.setWindowTitle('PyPicturePipeline')
+        self.show()
 
 
-class Ui_MainWindow(QtWidgets.QWidget):
-
-    # 自动生成的代码，用来对窗体进行设置
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 813, 23))
-        self.menubar.setObjectName("menubar")
-        self.menu = QtWidgets.QMenu(self.menubar)
-        self.menu.setObjectName("menu")
-        self.menu_2 = QtWidgets.QMenu(self.menubar)
-        self.menu_2.setObjectName("menu_2")
-        self.actionMark = QtWidgets.QAction(MainWindow)
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("img/mark.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.actionMark.setIcon(icon)
-        self.actionMark.setObjectName("actionMark")
-        self.actionRename = QtWidgets.QAction(MainWindow)
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("img/rename.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.actionRename.setIcon(icon1)
-        self.actionRename.setObjectName("actionRename")
-        self.menu.addAction(self.actionMark)
-        self.menu.addAction(self.actionRename)
-        self.menubar.addAction(self.menu.menuAction())
-        self.actionAbout = QtWidgets.QAction(MainWindow)
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("img/about.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.actionAbout.setIcon(icon)
-        self.actionAbout.setObjectName("actionAbout")
-        self.menu_2.addAction(self.actionAbout)
-        self.menubar.addAction(self.menu_2.menuAction())
-        palette = QtGui.QPalette()
-        palette.setBrush(MainWindow.backgroundRole(), QBrush(
-            QPixmap("img/back.png").scaled(MainWindow.size(), QtCore.Qt.IgnoreAspectRatio,
-                                           QtCore.Qt.SmoothTransformation)))
-        MainWindow.setPalette(palette)
-        MainWindow.setAutoFillBackground(True)
-        MainWindow.setFixedSize(800, 600);
-        MainWindow.setMenuBar(self.menubar)
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-    def retranslateUi(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "PyPicturePipeline"))
-        self.menu.setTitle(_translate("MainWindow", "主菜单"))
-        self.menu_2.setTitle(_translate("MainWindow", "|| 关于"))
-        self.actionMark.setText(_translate("MainWindow", "添加水印"))
-        self.actionRename.setText(_translate("MainWindow", "批量重命名"))
-        self.actionAbout.setText(_translate("MainWindow", "关于本软件"))
-        # 关联“添加水印”菜单的方法
-        self.actionMark.triggered.connect(self.openMark)
-        # 关联“批量重命名”菜单的方法
-        self.actionRename.triggered.connect(self.openRename)
-        # 关联“关于本软件”菜单的方法
-        self.actionAbout.triggered.connect(self.about)
-
-    # 打开水印窗体
-    def openMark(self):
-        self.another = imageMark.Ui_MarkWindow()  # 创建水印窗体对象
-        self.another.show()  # 显示窗体
-
-    # 打开重命名窗体
-    def openRename(self):
-        self.another = imageRename.Ui_RenameWindow()  # 创建重命名窗体对象
-        self.another.show()  # 显示窗体
-
-    # 关于本软件
-    def about(self):
-        QMessageBox.information(None, '关于本软件',
-                                'PyPicturePipeline是一款专为日常工作设计的工具软件，它极大地简化了为图片添加文字水印和图片水印的流程。使用这款软件，您可以轻松地自定义水印的位置和透明度，以满足不同需求。除此之外，它还提供了图片文件重命名的功能，支持将文件名转换为大写或小写，甚至允许您根据自定义模板对图片文件进行编号，从而更高效地管理和组织图片文件。',
-                                QMessageBox.Ok)
-
-
-# 主方法
 if __name__ == '__main__':
-    import sys
-
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()  # 创建窗体对象
-    ui = Ui_MainWindow()  # 创建PyQt5设计的窗体对象
-    ui.setupUi(MainWindow)  # 调用PyQt5窗体的方法对窗体对象进行初始化设置
-    MainWindow.show()  # 显示窗体
-    sys.exit(app.exec_())  # 程序关闭时退出进程
+    app = QApplication(sys.argv)
+    ex = MainWindow()
+    sys.exit(app.exec_())

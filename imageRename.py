@@ -15,49 +15,49 @@ class Ui_RenameWindow(QMainWindow):
     # 自动生成的代码，用来对窗体进行设置
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(507, 430)
+        MainWindow.resize(807, 630)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         # 重命名设置区域
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox.setGeometry(QtCore.QRect(10, 10, 491, 141))
+        self.groupBox.setGeometry(QtCore.QRect(10, 10, 800, 341))
         self.groupBox.setObjectName("groupBox")
         # 文件名大写单选按钮
         self.radioButton = QtWidgets.QRadioButton(self.groupBox)
-        self.radioButton.setGeometry(QtCore.QRect(20, 30, 89, 16))
+        self.radioButton.setGeometry(QtCore.QRect(20, 30, 100, 16))
         self.radioButton.setChecked(True) # 默认选中
         self.radioButton.setObjectName("radioButton")
         # 文件名小写单选按钮
         self.radioButton_2 = QtWidgets.QRadioButton(self.groupBox)
-        self.radioButton_2.setGeometry(QtCore.QRect(130, 30, 89, 16))
+        self.radioButton_2.setGeometry(QtCore.QRect(130, 30, 100, 16))
         self.radioButton_2.setObjectName("radioButton_2")
         # 文件名编号单选按钮
         self.radioButton_3 = QtWidgets.QRadioButton(self.groupBox)
-        self.radioButton_3.setGeometry(QtCore.QRect(20, 60, 89, 16))
+        self.radioButton_3.setGeometry(QtCore.QRect(20, 60, 100, 16))
         self.radioButton_3.setObjectName("radioButton_3")
         # 设置模板标签
         self.label = QtWidgets.QLabel(self.groupBox)
-        self.label.setGeometry(QtCore.QRect(30, 90, 54, 21))
+        self.label.setGeometry(QtCore.QRect(30, 90, 120, 21))
         self.label.setObjectName("label")
         # 起始编号标签
         self.label_2 = QtWidgets.QLabel(self.groupBox)
-        self.label_2.setGeometry(QtCore.QRect(220, 90, 54, 21))
+        self.label_2.setGeometry(QtCore.QRect(220, 90, 74, 21))
         self.label_2.setObjectName("label_2")
         # 设置起始编号的文本框
         self.lineEdit_2 = QtWidgets.QLineEdit(self.groupBox)
-        self.lineEdit_2.setGeometry(QtCore.QRect(280, 90, 61, 21))
+        self.lineEdit_2.setGeometry(QtCore.QRect(300, 90, 61, 21))
         self.lineEdit_2.setObjectName("lineEdit_2")
         # 编号增量标签
         self.label_3 = QtWidgets.QLabel(self.groupBox)
-        self.label_3.setGeometry(QtCore.QRect(360, 90, 54, 21))
+        self.label_3.setGeometry(QtCore.QRect(390, 90, 74, 21))
         self.label_3.setObjectName("label_3")
         # 设置编号增量的文本框
         self.lineEdit_3 = QtWidgets.QLineEdit(self.groupBox)
-        self.lineEdit_3.setGeometry(QtCore.QRect(420, 90, 61, 21))
+        self.lineEdit_3.setGeometry(QtCore.QRect(470, 90, 61, 21))
         self.lineEdit_3.setObjectName("lineEdit_3")
         # 模板下拉列表
         self.comboBox = QtWidgets.QComboBox(self.groupBox)
-        self.comboBox.setGeometry(QtCore.QRect(90, 90, 101, 22))
+        self.comboBox.setGeometry(QtCore.QRect(108, 90, 101, 22))
         self.comboBox.setObjectName("comboBox")
         # 模板中默认提供3种模板
         self.comboBox.addItem("")
@@ -65,24 +65,24 @@ class Ui_RenameWindow(QMainWindow):
         self.comboBox.addItem("")
         # 图片设置区域
         self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_2.setGeometry(QtCore.QRect(10, 160, 491, 51))
+        self.groupBox_2.setGeometry(QtCore.QRect(10, 160, 800, 341))
         self.groupBox_2.setObjectName("groupBox_2")
         # 选择图片路径标签
         self.label_4 = QtWidgets.QLabel(self.groupBox_2)
-        self.label_4.setGeometry(QtCore.QRect(30, 20, 91, 21))
+        self.label_4.setGeometry(QtCore.QRect(30, 20, 121, 21))
         self.label_4.setObjectName("label_4")
         # 图片路径文本框
         self.lineEdit_4 = QtWidgets.QLineEdit(self.groupBox_2)
-        self.lineEdit_4.setGeometry(QtCore.QRect(110, 20, 201, 21))
+        self.lineEdit_4.setGeometry(QtCore.QRect(135, 20, 201, 21))
         self.lineEdit_4.setText("")
         self.lineEdit_4.setObjectName("lineEdit_4")
         # 选择按钮
         self.pushButton = QtWidgets.QPushButton(self.groupBox_2)
-        self.pushButton.setGeometry(QtCore.QRect(320, 20, 75, 23))
+        self.pushButton.setGeometry(QtCore.QRect(360, 20, 75, 23))
         self.pushButton.setObjectName("pushButton")
         # 重命名按钮
         self.pushButton_2 = QtWidgets.QPushButton(self.groupBox_2)
-        self.pushButton_2.setGeometry(QtCore.QRect(410, 20, 75, 23))
+        self.pushButton_2.setGeometry(QtCore.QRect(450, 20, 75, 23))
         self.pushButton_2.setObjectName("pushButton_2")
         # 显示图片及路径的表格
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
