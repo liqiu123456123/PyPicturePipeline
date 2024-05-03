@@ -107,6 +107,15 @@ class Ui_RenameWindow(QMainWindow):
 
         self.retranslateUi(MainWindow)
         self.comboBox.setCurrentIndex(0) # 模板下拉列表中默认选择第一项
+
+        self.setStyleSheet(""" 
+         
+            QLabel {  
+    color: #666; /* 文本颜色 */  
+    background-color: #f7d78c; /* 背景颜色，通常设置为透明 */  
+} 
+        """)
+        self.setStyleSheet("background-color: #E1FFFF;font-weight: bold;font-size: 14px;font-family: 'Microsoft YaHei';")
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     # 自动生成的代码，用来设置窗体中控件的默认值

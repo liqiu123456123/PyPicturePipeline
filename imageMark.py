@@ -132,7 +132,7 @@ class Ui_MarkWindow(QMainWindow):
         self.statusBar.setObjectName("statusBar")
         self.statusBar.showMessage('加载成功…… ')  # 设置状态栏默认值
         MainWindow.setStatusBar(self.statusBar)
-
+        self.setStyleSheet("background-color: #E1FFFF;font-weight: bold;font-size: 14px;font-family: 'Microsoft YaHei';")
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
