@@ -31,7 +31,7 @@ class MainWindow(QWidget):
         scaled_pixmap = pixmap.scaled(64, 64, Qt.KeepAspectRatio, Qt.SmoothTransformation)
         image_label.setPixmap(scaled_pixmap)
         h_layout.addWidget(image_label)
-        h_layout.setSpacing(140)
+        h_layout.setSpacing(40)
         # 创建文本标签并添加到横向布局
         text_label = QLabel("欢迎使用PyPicturePipeline！")
         text_label.setStyleSheet("QLabel { color: white; }")
@@ -71,7 +71,7 @@ class MainWindow(QWidget):
         button_layout.addWidget(button1)
         button_layout.addWidget(button2)
         button_layout.addItem(spacer_item2)
-        button_layout.setSpacing(20)
+        button_layout.setSpacing(40)
         # 将win1添加到水平布局
         second_layout.addWidget(win1)
 
@@ -98,8 +98,9 @@ class MainWindow(QWidget):
         main_layout.setSpacing(0)
         second_layout.setSpacing(0)
         second_layout.setContentsMargins(0, 0, 0, 0)
+        button_layout.setContentsMargins(10, 30, 10, 0)
         # 设置窗口属性
-        self.setWindowTitle('导航框架')
+        self.setWindowTitle('PyPicturePipeline')
         self.show()
 
 

@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-# Form implementation generated from reading ui file 'imageRename.ui'
-# Created by: PyQt5 UI code generator 5.11.3,PyCharm
-# 开发团队   ：明日科技
-# 开发人员   ：小科
-# 开发时间   ：2018/11/17  18:07
-# 文件名称   ：imageRename.py
-
 import os
 import os.path
 from PyQt5 import QtCore, QtWidgets
@@ -110,7 +102,7 @@ class Ui_RenameWindow(QMainWindow):
         # 设置状态栏
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
-        self.statusbar.showMessage('准备就绪…… ')  # 设置状态栏默认值
+        self.statusbar.showMessage('加载成功…… ')  # 设置状态栏默认值
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)

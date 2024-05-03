@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-# Form implementation generated from reading ui file 'imageMark.ui'
-# Created by: PyQt5 UI code generator 5.11.3,PyCharm
-# 开发团队   ：明日科技
-# 开发人员   ：小科
-# 开发时间   ：2018/11/12  18:30
-# 文件名称   ：imageMark.py
-
 import os
 import os.path
 from PyQt5 import QtCore, QtWidgets
@@ -138,7 +130,7 @@ class Ui_MarkWindow(QMainWindow):
         #设置状态栏
         self.statusBar = QtWidgets.QStatusBar(MainWindow)
         self.statusBar.setObjectName("statusBar")
-        self.statusBar.showMessage('准备就绪…… ')  # 设置状态栏默认值
+        self.statusBar.showMessage('加载成功…… ')  # 设置状态栏默认值
         MainWindow.setStatusBar(self.statusBar)
 
         self.retranslateUi(MainWindow)
