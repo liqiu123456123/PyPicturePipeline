@@ -3,8 +3,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QStackedWidget, QLabel, \
     QSpacerItem, QSizePolicy
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QPixmap,QIcon,QFont
 import ImgRename, ImgMark
 class MainWindow(QWidget):
     def __init__(self):
@@ -16,6 +15,10 @@ class MainWindow(QWidget):
         main_layout = QVBoxLayout(self)
         main_layout.setContentsMargins(0, 0, 0, 0)  # 设置布局的四个间距都为0
         self.resize(1000, 860)
+        # 加载图标文件（需要确保文件路径正确）
+        icon = QIcon('img.png')  # 替换为你的图标文件路径
+        # 设置窗口图标
+        self.setWindowIcon(icon)
         # 创建第一个QWidget，背景色为绿色，固定高度为60
         top_widget = QWidget()
         top_widget.setStyleSheet("background-color:#f7d78c;")
