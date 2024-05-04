@@ -161,7 +161,7 @@ class Ui_RenameWindow(QMainWindow):
                 filepath = os.path.join(self.img_path, self.list[i]) # 记录遍历到的文件名
                 if os.path.isfile(filepath): # 判断是否为文件
                     imgType = os.path.splitext(filepath)[1]# 获取扩展名
-                    if imageMark.Ui_MarkWindow().isImg(imgType): # 判断是否为图片
+                    if ImgMark.Ui_MarkWindow().isImg(imgType): # 判断是否为图片
                         num += 1 # 数量加1
                         self.tableWidget.insertRow(i)  # 添加新行
                         # 设置第一列的值为文件名
@@ -183,7 +183,7 @@ class Ui_RenameWindow(QMainWindow):
                 filepath = os.path.join(self.img_path, filename)  # 记录遍历到的文件名(包括路径)
                 if os.path.isfile(filepath):  # 判断是否为文件
                     imgType = os.path.splitext(filepath)[1]  # 获取扩展名
-                    if imageMark.Ui_MarkWindow().isImg(imgType):  # 判断是否为图片
+                    if ImgMark.Ui_MarkWindow().isImg(imgType):  # 判断是否为图片
                         if self.radioButton.isChecked():  # 文件名大写
                             newfilename=str(filename).upper() # 将文件名转换为大写
                             newfilepath = os.path.join(self.img_path, newfilename)  # 新文件名（包括路径）
